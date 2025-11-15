@@ -58,7 +58,7 @@ Remember: You're roasting their training choices and patterns, not them as a per
 
 function getModel() {
   return genAI.getGenerativeModel({
-    model: 'gemini-1.5-flash',
+    model: 'gemini-2.5-flash',
     generationConfig: {
       temperature: 0.9,
       topP: 0.95,
