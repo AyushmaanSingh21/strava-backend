@@ -15,6 +15,9 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 const roastRoutes = require('./routes/roast');
 app.use('/api/roast', roastRoutes);
 
+const proxyRoutes = require('./routes/proxy');
+app.use('/api/proxy', proxyRoutes);
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
