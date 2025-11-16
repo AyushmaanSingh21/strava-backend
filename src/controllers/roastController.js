@@ -45,8 +45,11 @@ ${JSON.stringify(analysis, null, 2)}
 
 Generate a funny, witty roast based on this data. Remember: be honest but not mean, funny but constructive.`;
 
+    console.log('[ROAST] Generating roast with Gemini...');
     const result = await model.generateContent(prompt);
+    console.log('[ROAST] Gemini response:', result);
     const roastText = result.response.text();
+    console.log('[ROAST] Roast text:', roastText);
 
     res.json({
       success: true,

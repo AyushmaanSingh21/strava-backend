@@ -63,7 +63,7 @@ function getModel() {
       temperature: 0.9,
       topP: 0.95,
       topK: 40,
-      maxOutputTokens: 1024,
+      maxOutputTokens: 2048,
     },
   });
 }
