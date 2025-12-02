@@ -58,6 +58,7 @@ Generate a funny, witty roast based on this data. Remember: be honest but not me
       athlete: {
         name: `${profile.firstname} ${profile.lastname}`,
         photo: profile.profile_medium || profile.profile,
+        location: [profile.city, profile.state].filter(Boolean).join(', '),
       },
     });
   } catch (error) {
