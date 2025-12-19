@@ -10,8 +10,15 @@ router.get('/image', async (req, res) => {
   try {
     const { url } = req.query;
     
-    if (!url || !url.startsWith('https://dgalywyr863hv.cloudfront.net')) {
-      return res.status(400).json({ error: 'Invalid or missing image URL' });
+    if (!url) {
+      return res.status(400).json({ error: 'Missing image URL' });
+    }
+
+    // Basic validation to ensure it's a URL
+    try {
+      new URL(url);
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid URL' });
     }
 
     https.get(url, (response) => {
